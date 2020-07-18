@@ -1,36 +1,54 @@
-
 export type State = {
-  cards: Card[]
+  status: GameStatus
+  cards: Cards
   size: number
   tries: number
   found: number
+  currentPair: string[]
+}
+
+export enum GameStatus {
+  starting = 'game/starting',
+  started = 'game/started',
+  try = 'game/try',
+  checking = 'game/try/checking',
+  ended = 'game/ended'
 }
 
 export type Card = {
-  image: string
+  value: string
+  turned: boolean
+  visible: boolean
+}
+
+export type Cards = {
+  [id: string]: Card
 }
 
 // actions
 export enum ActionTypes {
+  setGameStatus = 'game/set',
+  restart = 'game/restart',
+  newTry = 'game/try',
+  pairFound = 'game/found',
   setCards = 'cards/set',
-  setSize = 'size/set',
-  setTries = 'tries/set',
-  setFound = 'found/set',
+  turnCards = 'cards/turn',
+  toggleCard = 'card/toggle',
+  hidePair = 'card/hide',
+  setSize = 'size/set'
 }
 
 export type Action = MapPayload<{
-  [ActionTypes.setCards]: Card[]
+  [ActionTypes.setGameStatus]: GameStatus
+  [ActionTypes.restart]: undefined
+  [ActionTypes.newTry]: string
+  [ActionTypes.pairFound]: undefined
+  [ActionTypes.setCards]: Cards
+  [ActionTypes.turnCards]: boolean
+  [ActionTypes.toggleCard]: string
+  [ActionTypes.hidePair]: string
   [ActionTypes.setSize]: number
-  [ActionTypes.setTries]: number
-  [ActionTypes.setFound]: number
 }>
-
-export type ActionCreators = {
-  setCards: (c: Card[]) => Action
-  setSize: (s: number) => Action
-  setTries: (t: number) => Action
-  setFound: (f: number) => Action
-}
 
 // Utulity types
 

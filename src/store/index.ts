@@ -1,29 +1,28 @@
-import rootReducer, {initialState} from './reducers'
-import { createStore } from "redux";
+import rootReducer, { initialState } from './reducers'
+import { createStore } from 'redux'
 import { useSelector } from 'react-redux'
-import { composeWithDevTools } from "redux-devtools-extension";
-import {State, Card} from './types'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import { State, GameStatus, Cards } from './types'
 
-const store = createStore(
-  rootReducer,
-  initialState,
-  composeWithDevTools()
-)
+const store = createStore(rootReducer, initialState, composeWithDevTools())
 
 if (process.env.NODE_ENV !== 'production' && module.hot) {
   module.hot.accept('./reducers', () => store.replaceReducer(rootReducer))
 }
 
-export const useState = () : State =>{
+export const useStore = (): State => {
   return {
-    cards: useSelector<State, Card[]>((state) => state.cards),
+    status: useSelector<State, GameStatus>((state) => state.status),
+    cards: useSelector<State, Cards>((state) => state.cards),
     size: useSelector<State, number>((state) => state.size),
     tries: useSelector<State, number>((state) => state.tries),
     found: useSelector<State, number>((state) => state.found),
-  }}
-  
-  export * from './actions'
-  
-  export { useDispatch } from 'react-redux'
+    currentPair: useSelector<State, string[]>((state) => state.currentPair)
+  }
+}
 
-  export default store
+export * from './actions'
+
+export { useDispatch } from 'react-redux'
+
+export default store
