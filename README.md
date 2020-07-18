@@ -28,9 +28,9 @@ Made with NextJS ReactJS Antd Styled-components.
 
 3.  **Export static site.**
 
-    Development mode.
+    Export mode.
 
     ```shell
-    # run the dev server
+    # exports to out folder
     npm run export
     ```
