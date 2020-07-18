@@ -2,7 +2,7 @@
   Find the pairs
 </h1>
 
-Find the pairs of items.
+Find the pairs of items. <a href="https://findpairs.netlify.app/">Demo</a>
 
 Made with NextJS ReactJS Antd Styled-components.
 
