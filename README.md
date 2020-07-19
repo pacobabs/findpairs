@@ -4,7 +4,7 @@
 
 Find the pairs of items. <a href="https://findpairs.netlify.app/">Demo</a>
 
-Made with NextJS ReactJS Antd Styled-components.
+Made with NextJS ReactJS and Styled-components.
 
 ## 🚀 Quick start
 
