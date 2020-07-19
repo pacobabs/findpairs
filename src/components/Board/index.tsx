@@ -12,10 +12,10 @@ const Board = () => {
       </Header>
       <Main>
         <Row>
-          <Col span={18}>
+          <Col xs={{ span: 24, order: 2 }} md={{ span: 18, order: 1 }}>
             <Game />
           </Col>
-          <Col span={6}>
+          <Col xs={{ span: 24, order: 1 }} md={{ span: 6, order: 2 }}>
             <Options />
           </Col>
         </Row>
