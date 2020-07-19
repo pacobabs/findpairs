@@ -20,8 +20,7 @@ export const Main = styled(Content)`
   && {
     background: #fff;
     border: 3px solid #eee;
-    min-height: 80vh;
-    padding: 1.625em;
+    min-height: 74vh;
     width: 100%;
     max-width: 60em;
     margin: 0.5em auto;
