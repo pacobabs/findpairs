@@ -5,15 +5,11 @@ const { Title } = Typography
 const { Content } = Layout
 
 export const App = styled(Layout)`
-  && {
-    background: #fff;
-  }
+  background: #fff;
 `
 
 export const Logo = styled(Title)`
-  && {
-    color: #fff;
-  }
+  color: #fff;
 `
 
 export const Main = styled(Content)`
